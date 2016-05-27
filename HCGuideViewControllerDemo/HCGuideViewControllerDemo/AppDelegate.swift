@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let isFristOpen = NSUserDefaults.standardUserDefaults().objectForKey("isFristOpenApp")
         
         if isFristOpen == nil {
-            window?.rootViewController = HCGuideViewController()
+            let guideViewController = HCGuideViewController()
+            guideViewController.imageNames = ["guide_1", "guide_2", "guide_3", "guide_4"]
+            window?.rootViewController = guideViewController
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.showMainViewController), name: HCGuideViewControllerDidFinish, object: nil)
             //NSUserDefaults.standardUserDefaults().setObject("isFristOpenApp", forKey: "isFristOpenApp")
         }
