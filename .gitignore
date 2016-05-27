@@ -1,0 +1,7 @@
+#ignore file
+xcshareddata
+xcuserdata
+*.xcuserstate
+*.DS_Store
+Podfile.lock
+Pods
