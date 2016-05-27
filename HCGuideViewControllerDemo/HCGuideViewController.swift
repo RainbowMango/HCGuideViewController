@@ -13,6 +13,7 @@ import UIKit
 public let ScreenBounds: CGRect  = UIScreen.mainScreen().bounds
 public let ScreenWidth: CGFloat  = UIScreen.mainScreen().bounds.size.width
 public let ScreenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
+public let HCGuideViewControllerDidFinish = "HCGuideViewControllerDidFinish"
 
 class HCGuideViewController: UIViewController {
     
@@ -24,7 +25,7 @@ class HCGuideViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
+        
         buildCollectionView()
         
         buildPageController()
@@ -54,6 +55,10 @@ class HCGuideViewController: UIViewController {
         pageController.currentPage = 0
         view.addSubview(pageController)
     }
+}
+
+public func prefersStatusBarHidden() -> Bool {
+    return false
 }
 
 extension HCGuideViewController: UICollectionViewDelegate, UICollectionViewDataSource {
