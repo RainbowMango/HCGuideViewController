@@ -12,6 +12,8 @@
 		9B8258C81CF85EA4009B42BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8258C61CF85EA4009B42BD /* Main.storyboard */; };
 		9B8258CA1CF85EA4009B42BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8258C91CF85EA4009B42BD /* Assets.xcassets */; };
 		9B8258CD1CF85EA4009B42BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8258CB1CF85EA4009B42BD /* LaunchScreen.storyboard */; };
+		9BF70A721CF8603300FF2415 /* HCGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF70A711CF8603300FF2415 /* HCGuideViewController.swift */; };
+		9BF70A741CF8604400FF2415 /* HCGuideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF70A731CF8604400FF2415 /* HCGuideCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9B8258C91CF85EA4009B42BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B8258CC1CF85EA4009B42BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B8258CE1CF85EA4009B42BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF70A711CF8603300FF2415 /* HCGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGuideViewController.swift; sourceTree = "<group>"; };
+		9BF70A731CF8604400FF2415 /* HCGuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGuideCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		9B8258B61CF85EA4009B42BD = {
 			isa = PBXGroup;
 			children = (
+				9BF70A701CF8601100FF2415 /* HCGuideViewController */,
 				9B8258C11CF85EA4009B42BD /* HCGuideViewControllerDemo */,
 				9B8258C01CF85EA4009B42BD /* Products */,
 			);
@@ -62,6 +67,15 @@
 				9B8258CE1CF85EA4009B42BD /* Info.plist */,
 			);
 			path = HCGuideViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		9BF70A701CF8601100FF2415 /* HCGuideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9BF70A731CF8604400FF2415 /* HCGuideCell.swift */,
+				9BF70A711CF8603300FF2415 /* HCGuideViewController.swift */,
+			);
+			name = HCGuideViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF70A721CF8603300FF2415 /* HCGuideViewController.swift in Sources */,
+				9BF70A741CF8604400FF2415 /* HCGuideCell.swift in Sources */,
 				9B8258C51CF85EA4009B42BD /* ViewController.swift in Sources */,
 				9B8258C31CF85EA4009B42BD /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +304,7 @@
 				9B8258D31CF85EA4009B42BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
