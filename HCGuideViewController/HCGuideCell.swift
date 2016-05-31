@@ -26,7 +26,12 @@ class GuideCell: UICollectionViewCell {
         newImageView.contentMode = UIViewContentMode.ScaleAspectFill
         contentView.addSubview(newImageView)
         
-        nextButton.setBackgroundImage(UIImage(named: "icon_next"), forState: UIControlState.Normal)
+        //获取bundle资源
+        let bundle = NSBundle.HCGuideViewControllerBundle()
+        let imagePath = bundle.pathForResource("icon_next@2x", ofType: "png")
+        let image = UIImage(contentsOfFile: imagePath!)
+        
+        nextButton.setBackgroundImage(image, forState: UIControlState.Normal)
         nextButton.addTarget(self, action: #selector(GuideCell.nextButtonClick), forControlEvents: UIControlEvents.TouchUpInside)
         nextButton.hidden = true
         contentView.addSubview(nextButton)

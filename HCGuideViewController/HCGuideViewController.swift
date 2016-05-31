@@ -95,3 +95,12 @@ extension HCGuideViewController: UICollectionViewDelegate, UICollectionViewDataS
         pageController.currentPage = Int(scrollView.contentOffset.x / ScreenWidth + 0.5)
     }
 }
+
+public extension NSBundle {
+    
+    class func HCGuideViewControllerBundle() -> NSBundle {
+        let assetPath = NSBundle(forClass: HCGuideViewController.self).resourcePath!
+        return NSBundle(path: (assetPath as NSString).stringByAppendingPathComponent("HCGuideViewController.bundle"))!
+    }
+    
+}

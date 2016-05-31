@@ -45,8 +45,8 @@
 			isa = PBXGroup;
 			children = (
 				9B7C083E1CFDD09F008B11B4 /* HCGuideCell.swift */,
-				9B7C083F1CFDD09F008B11B4 /* HCGuideViewController.bundle */,
 				9B7C08401CFDD09F008B11B4 /* HCGuideViewController.swift */,
+				9B7C083F1CFDD09F008B11B4 /* HCGuideViewController.bundle */,
 			);
 			name = HCGuideViewController;
 			sourceTree = "<group>";
