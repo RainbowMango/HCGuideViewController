@@ -1,12 +1,11 @@
 //
-//  NewCharacteristicsCell.swift
-//  LoveFreshBeen
+//  ViewController.swift
+//  HCGuideViewControllerDemo
 //
-//  Created by 维尼的小熊 on 16/1/12.
-//  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
-//  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+//  Created by ruby on 16/5/27.
+//  Copyright © 2016年 ruby. All rights reserved.
+//
+//  GitHub地址:https://github.com/RainbowMango/HCGuideViewController
 
 import UIKit
 
@@ -28,7 +27,7 @@ class GuideCell: UICollectionViewCell {
         contentView.addSubview(newImageView)
         
         nextButton.setBackgroundImage(UIImage(named: "icon_next"), forState: UIControlState.Normal)
-        nextButton.addTarget(self, action: "nextButtonClick", forControlEvents: UIControlEvents.TouchUpInside)
+        nextButton.addTarget(self, action: #selector(GuideCell.nextButtonClick), forControlEvents: UIControlEvents.TouchUpInside)
         nextButton.hidden = true
         contentView.addSubview(nextButton)
     }
@@ -42,6 +41,6 @@ class GuideCell: UICollectionViewCell {
     }
     
     func nextButtonClick() {
-        NSNotificationCenter.defaultCenter().postNotificationName(GuideViewControllerDidFinish, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(HCGuideViewControllerDidFinish, object: nil)
     }
 }

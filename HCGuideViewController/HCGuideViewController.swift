@@ -1,26 +1,30 @@
 //
-//  NewCharacteristicsViewController.swift
-//  LoveFreshBeen
+//  ViewController.swift
+//  HCGuideViewControllerDemo
 //
-//  Created by 维尼的小熊 on 16/1/12.
-//  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
-//  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+//  Created by ruby on 16/5/27.
+//  Copyright © 2016年 ruby. All rights reserved.
+//
+//  GitHub地址:https://github.com/RainbowMango/HCGuideViewController
 
 import UIKit
 
-class GuideViewController: BaseViewController {
+public let ScreenBounds: CGRect  = UIScreen.mainScreen().bounds
+public let ScreenWidth: CGFloat  = UIScreen.mainScreen().bounds.size.width
+public let ScreenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
+public let HCGuideViewControllerDidFinish = "HCGuideViewControllerDidFinish"
+
+public class HCGuideViewController: UIViewController {
     
     private var collectionView: UICollectionView?
-    private var imageNames = ["guide_40_1", "guide_40_2", "guide_40_3", "guide_40_4"]
+    public var imageNames     : Array<String>!
     private let cellIdentifier = "GuideCell"
     private var isHiddenNextButton = true
     private var pageController = UIPageControl(frame: CGRectMake(0, ScreenHeight - 50, ScreenWidth, 20))
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
+        
         buildCollectionView()
         
         buildPageController()
@@ -52,14 +56,18 @@ class GuideViewController: BaseViewController {
     }
 }
 
-extension GuideViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+public func prefersStatusBarHidden() -> Bool {
+    return false
+}
+
+extension HCGuideViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return imageNames.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! GuideCell
         cell.newImage = UIImage(named: imageNames[indexPath.row])
         if indexPath.row != imageNames.count - 1 {
@@ -69,7 +77,7 @@ extension GuideViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if scrollView.contentOffset.x == ScreenWidth * CGFloat(imageNames.count - 1) {
             let cell = collectionView!.cellForItemAtIndexPath(NSIndexPath(forRow: imageNames.count - 1, inSection: 0)) as! GuideCell
             cell.setNextButtonHidden(false)
@@ -77,7 +85,7 @@ extension GuideViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.x != ScreenWidth * CGFloat(imageNames.count - 1) && !isHiddenNextButton && scrollView.contentOffset.x > ScreenWidth * CGFloat(imageNames.count - 2) {
             let cell = collectionView!.cellForItemAtIndexPath(NSIndexPath(forRow: imageNames.count - 1, inSection: 0)) as! GuideCell
             cell.setNextButtonHidden(true)
